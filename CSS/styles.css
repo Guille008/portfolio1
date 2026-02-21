@@ -1,0 +1,557 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'monserrat', sans-serif;
+    color: #535353;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'roboto', sans-serif;
+    color: #252525;
+}
+
+
+a {
+    color: black;
+}
+
+/**ESTILOS NAV**/
+nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+}
+
+#proyectos,
+#sobre-mi {
+    scroll-margin-top: 90px;
+}
+
+nav section {
+    width: 100%;
+}
+
+nav img {
+    width: 50px;
+    height: 50px;
+}
+
+.contButton {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+nav section ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.switch {
+    font-size: 12px;
+    position: relative;
+    display: inline-block;
+    width: 4em;
+    height: 2.5em;
+    margin-top: 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: .5s;
+    border-radius: 5px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "ES";
+    height: 1.4em;
+    width: 0.1em;
+    border-radius: 0px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #918a8a;
+    box-shadow: inset 2px 5px 10px rgb(0, 0, 0);
+}
+
+input:checked+.slider:before {
+    transform: translateX(1.2em) rotate(360deg);
+    content: "EN";
+
+}
+
+
+#btnContactar {
+    all: unset;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    position: relative;
+    border-radius: 100em;
+    background-color: rgba(0, 0, 0, 0.75);
+    box-shadow:
+        -0.15em -0.15em 0.15em -0.075em rgba(5, 5, 5, 0.25),
+        0.0375em 0.0375em 0.0675em 0 rgba(5, 5, 5, 0.1);
+}
+
+#btnContactar::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: calc(100% + 0.3em);
+    height: calc(100% + 0.3em);
+    top: -0.15em;
+    left: -0.15em;
+    border-radius: inherit;
+    background: linear-gradient(-135deg,
+            rgba(5, 5, 5, 0.5),
+            transparent 20%,
+            transparent 100%);
+    filter: blur(0.0125em);
+    opacity: 0.25;
+    mix-blend-mode: multiply;
+}
+
+#btnContactar .button-outer {
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+    transition: box-shadow 300ms ease;
+    will-change: box-shadow;
+    box-shadow:
+        0 0.05em 0.05em -0.01em rgba(5, 5, 5, 1),
+        0 0.01em 0.01em -0.01em rgba(5, 5, 5, 0.5),
+        0.15em 0.3em 0.1em -0.01em rgba(5, 5, 5, 0.25);
+}
+
+#btnContactar:hover .button-outer {
+    box-shadow:
+        0 0 0 0 rgba(5, 5, 5, 1),
+        0 0 0 0 rgba(5, 5, 5, 0.5),
+        0 0 0 0 rgba(5, 5, 5, 0.25);
+}
+
+.button-inner {
+    --inset: 0.035em;
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+    padding: 1em 1.5em;
+    background-image: linear-gradient(135deg,
+            rgba(230, 230, 230, 1),
+            rgba(180, 180, 180, 1));
+    transition:
+        box-shadow 300ms ease,
+        clip-path 250ms ease,
+        background-image 250ms ease,
+        transform 250ms ease;
+    will-change: box-shadow, clip-path, background-image, transform;
+    overflow: clip;
+    clip-path: inset(0 0 0 0 round 100em);
+    box-shadow:
+        /* 1 */
+        0 0 0 0 inset rgba(5, 5, 5, 0.1),
+        /* 2 */
+        -0.05em -0.05em 0.05em 0 inset rgba(5, 5, 5, 0.25),
+        /* 3 */
+        0 0 0 0 inset rgba(5, 5, 5, 0.1),
+        /* 4 */
+        0 0 0.05em 0.2em inset rgba(255, 255, 255, 0.25),
+        /* 5 */
+        0.025em 0.05em 0.1em 0 inset rgba(255, 255, 255, 1),
+        /* 6 */
+        0.12em 0.12em 0.12em inset rgba(255, 255, 255, 0.25),
+        /* 7 */
+        -0.075em -0.25em 0.25em 0.1em inset rgba(5, 5, 5, 0.25);
+}
+
+#btnContactar:hover .button-inner {
+    clip-path: inset(clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) clamp(1px, 0.0625em, 2px) round 100em);
+    box-shadow:
+        /* 1 */
+        0.1em 0.15em 0.05em 0 inset rgba(5, 5, 5, 0.75),
+        /* 2 */
+        -0.025em -0.03em 0.05em 0.025em inset rgba(5, 5, 5, 0.5),
+        /* 3 */
+        0.25em 0.25em 0.2em 0 inset rgba(5, 5, 5, 0.5),
+        /* 4 */
+        0 0 0.05em 0.5em inset rgba(255, 255, 255, 0.15),
+        /* 5 */
+        0 0 0 0 inset rgba(255, 255, 255, 1),
+        /* 6 */
+        0.12em 0.12em 0.12em inset rgba(255, 255, 255, 0.25),
+        /* 7 */
+        -0.075em -0.12em 0.2em 0.1em inset rgba(5, 5, 5, 0.25);
+}
+
+#btnContactar .button-inner span {
+    position: relative;
+    z-index: 4;
+    font-family: "Inter", sans-serif;
+    letter-spacing: -0.05em;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(135deg,
+            rgba(25, 25, 25, 1),
+            rgba(75, 75, 75, 1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: transform 250ms ease;
+    display: block;
+    will-change: transform;
+    text-shadow: rgba(0, 0, 0, 0.1) 0 0 0.1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#btnContactar:hover .button-inner span {
+    transform: scale(0.975);
+}
+
+#btnContactar:active .button-inner {
+    transform: scale(0.975);
+}
+
+:root {
+    --color-uno: rgb(207, 206, 206);
+}
+
+/** ESTILOS MAIN**/
+main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-uno);
+}
+
+.zonaTitulo {
+    width: 100%;
+    height: 45rem;
+    min-height: 25rem;
+    max-height: 50rem;
+    background: linear-gradient(to bottom, #ffffff, var(--color-uno));
+}
+
+.contTitulo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+h2 {
+    font-size: x-large;
+    margin-bottom: 5px;
+}
+
+.titulo {
+    width: clamp(18rem, 80%, 40rem);
+    height: clamp(2.5rem, 6vw, 3rem);
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #969696,
+        -15px -15px 30px #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    margin-bottom: 30px;
+}
+
+
+.descripcion {
+    width: clamp(18rem, 90%, 40rem);
+    min-height: 12rem;
+    max-height: 40rem;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #969696,
+        -15px -15px 30px #ffffff;
+    margin: 5px;
+    padding: 25px;
+    font-size: 20px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+
+
+.contDeco1 {
+    position: relative;
+    overflow: hidden;
+    background: #e0e0e000;
+    height: 100%;
+    width: 100%;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+}
+
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    background: #b9c3c9;
+    animation: blow 4s linear infinite;
+}
+
+@keyframes blow {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -1000%);
+        opacity: 0;
+        filter: hue-rotate(720deg);
+    }
+}
+
+
+
+.skinCont {
+    width: 100%;
+    height: 25rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.skins {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 100px;
+    gap: 20px;
+}
+
+.skinCont img {
+    width: 75px;
+    height: 75px;
+    justify-self: center;
+    align-self: center;
+}
+
+.skinCont img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+.skins h3 {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    color: #000000;
+}
+
+.descSkins {
+    width: clamp(18rem, 90%, 40rem);
+    border-radius: 30px;
+    background: #e6e2e2;
+    box-shadow: 15px 15px 30px #494747,
+        -15px -15px 30px #e6e3e3;
+    margin: 20px;
+    padding: 30px;
+    font-size: large;
+}
+
+.descSkins h4 {
+    margin-bottom: 10px;
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+
+.contDeco3 {
+    width: 100%;
+    height: 35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contProyect {
+    width: 100%;
+    padding-top: 200px;
+}
+
+h4 {
+    margin-bottom: 20px;
+    font-size: x-large;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.proyecto {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 200px;
+}
+
+.card {
+    width: 190px;
+    height: 120px;
+    background-color: #bbb9b9;
+    text-align: center;
+    border: 10px solid #bbb9b9;
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 10px #868383, inset -5px -5px 10px #dad5d5;
+    transition: 0.5s;
+}
+
+
+
+.card:hover {
+    height: 425px;
+    width: 500px;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    color: rgb(107, 40, 40);
+    font-size: 30px;
+    background-color: #bbb9b9;
+    margin: 20px auto;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 8px 8px 10px #868383, -8px -8px 10px #dad5d5;
+}
+
+.content {
+    color: #575656;
+    background-color: #bbb9b9;
+    padding: 10px;
+    margin: 5px 20px;
+    border-radius: 8px;
+    box-shadow: 8px 8px 10px #868383, -8px -8px 10px #dad5d5;
+    transform: translateY(-80px) scale(0);
+    transition: all 0.5s;
+    height: 280px;
+}
+
+.content img {
+    border-radius: 4px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 70%;
+}
+
+.card:hover .content {
+    transform: translateY(0) scale(1)
+}
+
+
+
+/** ESTILOS FOTTER**/
+footer {
+    padding: 10px;
+}
+
+.contContac {
+    width: 100%;
+    display: flex;
+}
+
+.contacto {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+
+.comunidad {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    text-align: end;
+}
+
+footer a p{
+    display: inline-block;
+}
+
+.contDerechos {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: small;
+    color: gray;
+}
+h5,h6{
+    font-size: large;
+}
+
+footer li, footer a {
+    font-size: medium;
+    color: rgb(87, 87, 87);
+}
+footer li p {
+    font-size: small;
+    color: rgb(158, 158, 158);
+}
+
+footer li, footer a:hover {
+    color: rgb(0, 0, 0);
+    transition: color 0.3s;
+}
+
