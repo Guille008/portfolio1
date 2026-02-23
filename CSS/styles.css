@@ -555,3 +555,194 @@ footer li, footer a:hover {
     transition: color 0.3s;
 }
 
+/* MEDIA QUERIES */
+@media (min-width: 10px) and (max-width: 479px) {
+    nav{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .contLogo,.contLista{
+        display: none;
+    }
+    .contButton{
+        justify-content: space-between;
+    }
+
+    h1,h2{
+        font-size: medium;
+    }
+    .descripcion{
+        font-size: small;
+    }
+    .contTitulo{
+        height: 25rem;
+    }
+    .zonaTitulo{
+        height: 30rem;
+    }
+    .logo{
+        height: 25rem;
+    }
+    .bubble{
+        display: none;
+    }
+    .skinCont{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .skins {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
+    gap: 20px;
+    }
+    .skins h3, .descSkins h4{
+        font-size: medium;
+    }
+    .descSkins{
+        font-size: small;
+    }
+    .contProyect{
+        padding-top: 100px;
+
+    }
+    .contProyect h4{
+        font-size: medium;
+    }
+    .proyecto{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 100px;
+    }
+    .card{
+        width: 50%;
+    }
+    
+    .card:hover {
+    height: 375px;
+    width: 90%;
+    }
+    .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    .content {
+        height: 250px;
+    }
+    .content img {
+        height: 60%;
+    }
+    .content {
+        font-size: small;
+    }
+    h5,h6{
+    font-size: small;
+    }
+    footer a,footer p{
+        font-size: small;
+    }
+}
+@media (min-width: 480px) and (max-width: 769px){
+    nav{
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .contLogo,.contLista{
+        display: none;
+    }
+    .contButton{
+        justify-content: space-between;
+    }
+
+    h1,h2{
+        font-size: medium;
+    }
+    .descripcion{
+        font-size: small;
+    }
+    .contTitulo{
+        height: 25rem;
+    }
+    .zonaTitulo{
+        height: 30rem;
+    }
+    .logo{
+        height: 25rem;
+    }
+    .bubble{
+        display: none;
+    }
+    .skinCont{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .skins {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
+    gap: 20px;
+    }
+    .skins h3, .descSkins h4{
+        font-size: medium;
+    }
+    .descSkins{
+        font-size: small;
+    }
+    .contProyect{
+        padding-top: 100px;
+
+    }
+    .contProyect h4{
+        font-size: medium;
+    }
+    .proyecto{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 100px;
+    }
+    .card{
+        width: 30%;
+    }
+    
+    .card:hover {
+    height: 375px;
+    width: 90%;
+    }
+    .icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    .content {
+        height: 250px;
+    }
+    .content img {
+        height: 60%;
+    }
+    .content {
+        font-size: small;
+    }
+    h5,h6{
+    font-size: small;
+    }
+    footer a,footer p{
+        font-size: small;
+    }
+}
+@media (min-width: 770px) and (max-width: 990px){
+    .skinCont{
+        flex-direction: column;
+        height: auto;
+    }
+    .skins {
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr);
+    }
+}
